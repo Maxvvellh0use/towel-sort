@@ -6,17 +6,11 @@ module.exports = function towelSort (matrix) {
         return []
     }
     const mapMatrix = matrix.map( function(elem, i) {
-        if (i % 2 !== 0) {
-            return elem.sort((a,b) => b - a)
-        }
-        else {
-            return elem
-        }
+       return i % 2 !== 0 ? elem.sort((a,b) => b - a) : elem
     });
     console.log(mapMatrix);
     const concatMatrix = mapMatrix.concat(...matrix);
-    const result = concatMatrix.filter(elem => Array.isArray(elem) === false);
-    console.log(result);
+    const result = concatMatrix.filter(elem => Array.isArray(elem) === false);;
     return result;
 };
 
